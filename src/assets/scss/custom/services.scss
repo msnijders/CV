@@ -1,0 +1,55 @@
+#services
+{
+  padding: rem-calc($section-padding);
+  background-color: $light-gray;
+  .services-container
+  {
+    @include xy-grid-container;
+    .services-grid
+    {
+     @include xy-grid;
+    }
+  }
+}
+
+#services
+{
+  .service-title
+  {
+    width: 100%;
+    text-align: center;
+    h2
+    {
+      font-size: rem-calc($section-font-size);
+      margin-bottom: rem-calc($spacing-bottom-medium);
+      letter-spacing: rem-calc(2px);
+      font-weight: 900;
+    }
+  }
+
+  .single-service
+  {
+    padding: rem-calc($single-service-padding);
+    margin-bottom: rem-calc($spacing-bottom-medium);
+    -moz-box-shadow: $single-service-shadow;
+    -webkit-box-shadow: $single-service-shadow;
+    box-shadow: $single-service-shadow;
+    background-color: $white;
+    text-align: center;
+
+    &:last-child
+    {
+      margin-bottom: 0;
+    }
+
+    svg
+    {
+      margin-bottom: rem-calc(10px);
+    }
+
+    p
+    {
+      margin: 0;
+    }
+  }
+}

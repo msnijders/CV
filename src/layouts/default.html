@@ -1,0 +1,53 @@
+{{!-- This is the base layout for your project, and will be used on every page. --}}
+
+<!doctype html>
+<html class="no-js" lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta http-equiv="x-ua-compatible" content="ie=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Foundation for Sites</title>
+    <link rel="stylesheet" href="{{root}}assets/css/app.css">
+    <link href="https://fonts.googleapis.com/css?family=Quicksand:400,700" rel="stylesheet">
+    <script defer src="https://use.fontawesome.com/releases/v5.0.7/js/all.js"></script>
+  </head>
+  <body>
+
+    {{!-- Pages you create in the src/pages/ folder are inserted here when the flattened page is created. --}}
+    {{> body}}
+
+    <script src="{{root}}assets/js/app.js"></script>
+
+    <script>
+      var $hamburger = $(".hamburger");
+      $hamburger.on("click", function(e) {
+        $hamburger.toggleClass("is-active");
+      });
+    </script>
+
+    <script type="text/javascript">
+    $(document).ready(function() {
+      $('a[href*=#]').each(function() {
+        if (location.pathname.replace(/^\//,'') == this.pathname.replace(/^\//,'')
+        &amp;amp;&amp;amp; location.hostname == this.hostname
+        &amp;amp;&amp;amp; this.hash.replace(/#/,'') ) {
+
+          var $targetId = $(this.hash), $targetAnchor = $('[name=' + this.hash.slice(1) +']');
+          var $target = $targetId.length ? $targetId : $targetAnchor.length ? $targetAnchor : false;
+
+          if ($target) {
+            var targetOffset = $target.offset().top;
+            $(this).click(function() {
+              $("#nav li a").removeClass("active");
+              $(this).addClass('active');
+              $('html, body').animate({scrollTop: targetOffset}, 1000);
+              return false;
+            });
+          }
+        }
+      });
+
+      });
+    </script>
+  </body>
+</html>

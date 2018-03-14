@@ -1,0 +1,41 @@
+#about
+{
+  padding: rem-calc($section-padding);
+  .about-container
+  {
+    @include xy-grid-container;
+    .about-grid
+    {
+     @include xy-grid;
+
+     .about-image
+     {
+      margin-bottom: rem-calc($spacing-bottom-medium);
+
+       @include breakpoint(medium)
+       {
+         @include xy-cell();
+       }
+     }
+
+     .download-resume
+     {
+       a
+       {
+         display: inline-block;
+         color: $body-font-color;
+         border: 2px solid map-get($foundation-palette, primary);;
+         padding: rem-calc($resume-btn-padding);
+         font-weight: bold;
+         text-transform: uppercase;
+
+         &:hover
+         {
+           background-color: map-get($foundation-palette, primary);
+           color: $white;
+         }
+       }
+     }
+    }
+  }
+}
